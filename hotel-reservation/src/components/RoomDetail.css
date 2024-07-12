@@ -1,0 +1,31 @@
+.room-detail-container {
+    padding: 2em;
+  }
+  
+  .room-detail-container img {
+    max-width: 50%;
+    height: auto;
+  }
+  
+  .room-detail-container h2 {
+    font-size: 2em;
+  }
+  
+  .room-detail-container p {
+    font-size: 1.2em;
+  }
+  
+  .room-detail-container button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 1em;
+  }
+  
+  .room-detail-container button:hover {
+    background-color: #0056b3;
+  }
+  

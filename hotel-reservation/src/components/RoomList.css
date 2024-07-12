@@ -1,0 +1,34 @@
+.room-list-container {
+    padding: 2em;
+  }
+  
+  .room-item {
+    margin-bottom: 2em;
+  }
+  
+  .room-item img {
+    max-width: 50%;
+    height: auto;
+  }
+  
+  .room-item h3 {
+    font-size: 1.5em;
+  }
+  
+  .room-item p {
+    font-size: 1em;
+  }
+  
+  .room-item button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .room-item button:hover {
+    background-color: #0056b3;
+  }
+  
