@@ -1,52 +1,57 @@
-
 .confirmation-page {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #2c2c2c; 
-        color: white; 
-  }
-  
-  h1, h2, h3 {
-    color: #00cc66; 
-  }
-  
-  .confirmation-details {
-    background-color: #333; 
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
-  }
-  
-  .order-summary ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .order-summary li {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-    border-bottom: 1px solid #555; 
-  }
-  
-  .order-total {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    padding-top: 10px;
-    color: #00cc66; 
-  }
-  
-  .payment-info {
-    margin-top: 20px;
-  }
-  
-  .confirmation-footer {
-    margin-top: 20px;
-    border-top: 1px solid #555; 
-    padding-top: 20px;
-    font-size: 14px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f5f5f5; 
+  color: #333;
+}
+
+.confirmation-page h1 {
+  color: #4CAF50;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+}
+
+.confirmation-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.confirmation-card p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.confirmation-card p span {
+  font-weight: bold;
+  color: #4CAF50; 
+}
+
+.confirmation-card .total-price {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #333; 
+}
+
+.confirmation-page .back-button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #4CAF50; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.confirmation-page .back-button:hover {
+  background-color: #45a049; 
+}
