@@ -1,44 +1,47 @@
-import React, { useState, useContext } from 'react';
-import { ReservationContext } from '../context/ReservationContext';
+import React, { useState } from 'react';
 import './ReservationForm.css';
 
-const ReservationForm = ({ setView }) => {
-  const { addReservation } = useContext(ReservationContext);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [date, setDate] = useState('');
+const ReservationForm = ({ roomType, roomPrice, onSubmit }) => {
+  const [quantity, setQuantity] = useState(1);
+  const [customerDetails, setCustomerDetails] = useState({
+    name: '',
+    email: '',
+    // Add other fields as needed
+  });
+
+  const handleChange = (e) => {
+    setCustomerDetails({
+      ...customerDetails,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleQuantityChange = (e) => {
+    setQuantity(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const reservation = { name, email, phone, date };
-    addReservation(reservation);
-    setView('confirmation');
+    onSubmit({ ...customerDetails, quantity, roomType, total: quantity * roomPrice });
   };
 
   return (
     <form className="reservation-form" onSubmit={handleSubmit}>
-      <h2>Make a Reservation</h2>
       <label>
         Name:
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+        <input type="text" name="name" value={customerDetails.name} onChange={handleChange} required />
       </label>
       <label>
         Email:
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <input type="email" name="email" value={customerDetails.email} onChange={handleChange} required />
       </label>
       <label>
-        Phone:
-        <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+        Quantity:
+        <input type="number" value={quantity} onChange={handleQuantityChange} min="1" required />
       </label>
-      <label>
-        Date:
-        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
-      </label>
-      <button type="submit">Submit</button>
+      <button type="submit">Reserve</button>
     </form>
   );
 };
 
 export default ReservationForm;
-
